@@ -1,4 +1,5 @@
 //*********carrega vetor mecanicos do storange*******
+var registroMecanicos =[];
 var mecanicoArmazenado = localStorage.getItem("vetorMecanico");
 var registroMecanicos = JSON.parse(mecanicoArmazenado);
 
