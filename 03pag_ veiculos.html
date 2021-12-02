@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel=" stylesheet ">
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap " rel=" stylesheet ">
+    <title>Oficina Atitude</title>
+    <link rel="stylesheet" href="style/style_pg03.css">
+</head>
+
+<body>
+    <div id="header">
+        <img src="./img/logo_oficina.gif" alt="Logo Oficina Atyitude">
+        <H1>Atitude Serviços Automotivos</H1>
+        <p>Desde 1990, confiança e qualidade!</p>
+    </div>
+    <div id="nav">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="02pag_mecanicos.html">Mecânicos</a>
+            </li>
+            <li>
+                <a style="color: rgb(236, 235, 235);">Veículos</a>
+            </li>
+            <li>
+                <a href="04pag_concertos.html">Consertos</a>
+            </li>
+            <li>
+                <a href="05pag_relatorios.html">Relatórios</a>
+            </li>
+            <li>
+                <a href="06pag_sair.html">Sair</a>
+        </ul>
+    </div>
+    <div class="dados" id="cadastro veiculos">
+        <h2>Cadastro Veículos</h2>
+        <form id="infoVeiculo">
+            <legend>Cadastro de Veículos</legend>
+            <strong id="errorCadastro" class="alertCpf" style="display: none;" role="alert">Veicílo já cadastrado!
+                Informe
+                novemente</strong>
+            <label for="placa">Paca:</label>
+            <input class="required" type="text" id="placa" name="placa" placeholder="AAAA9999" maxlength="8"
+                width="5px">
+            <label for="cidade">Cidade</label>
+            <input class="required" type="text" id="placa_cidade" name="cidade" width="10px">
+            <label for="placa_estado">Estado</label>
+            <select class="required" id="placa_estado" name="placa_estado" required>
+                <option value=""></option>
+                <option value="AC">AC</option>
+                <option value="AL">AL</option>
+                <option value="AP">AP</option>
+                <option value="AM">AM</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="DF">DF</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MT">MT</option>
+                <option value="MS">MS</option>
+                <option value="MG">MG</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PR">PR</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RS">RS</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="SP">SP</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+            </select>
+            <br><br>
+            <label for="tipo_veic">Tipo de Veículo:</label>
+            <input type="text" id="tipo_veic" name="tipo_veic">
+            <br><br>
+            <label for="marca_veic">Marca:</label>
+            <input type="text" id="marca_veic" name="marca_veic" width="10px">
+            <label for="modelo_veic">Modelo:</label>
+            <input type="text" id="modelo_veic" name="modelo_veic" width="10px">
+            <label for="ano_veic">Ano</label>
+            <input type="text" id="ano_veic" name="ano_veic" pattern="9999" width="5px">
+            <br><br>
+            <label for="portas_veic">Portas</label>
+            <input type="number" id="portas_veic" name="portas_veic" width="10px">
+            <label for="lugares_veic">Lugares</label>
+            <input type="number" id="lugares_veic" name="lugares_veic" width="10px">
+            <br><br>
+            <label for="combustivel_veic">Combustivel: </label>
+            <select id="combustivel_veic" name="combustivel_veic" required>
+                <option value="vazio"> </option>
+                <option value="alcool">Álcool</option>
+                <option value="gasolina">Gasolina</option>
+                <option value="disel">Disel</option>
+                <option value="flex">Flex</option>
+            </select>
+            <label for="cor_veic">Cor:</label>
+            <input type="text" id="cor_veic" name="cor_veic" width="10px">
+            <br><br>
+            <label for="acessorios_veic">Acessórios</label><br>
+            <textarea id="acessorios_veic" name="acessorios_veic" rows="5" cols="60"></textarea>
+            <br><br>
+        </form>
+        <div id="campoObrigatorio" class="alertCpf" style="display: none;" role="alert">
+            <strong>Campo obirgatorio!</strong>
+        </div><br>
+        <button type="submit" onclick="contole()">Cadastrar</button>
+        <div class="dados" id="exibeCadasto" style="display: none;">
+            <h3>Cadatro realizado!</h3>
+            <table id="dadosVeiculo">
+                <thead>
+                    <tr>
+                        <th>Placa</th>
+                        <th>Cidade</th>
+                        <th>Estado</th>
+                        <th>Tipo de Veículo</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Ano</th>
+                        <th>Portas</th>
+                        <th>Lugares</th>
+                        <th>Combustível</th>
+                        <th>Cor</th>
+                        <th>Acessórios</th>
+                    </tr>
+                </thead>
+                <tbody id="tabdados">
+                </tbody>
+            </table>
+            <button type="reset" onclick="limpaGeral('','tabdados','exibeCadasto')">Limpar</button>
+        </div>
+    </div>
+    <div class="dados" id="json">
+        <button type="submit" onclick="mostraJSON()">Mostrar arquivo JSON</button>
+    </div>
+    <div class="dados" id="pesquisaVeiculo">
+        <h3>Pesquisa de Veiculos</h3>
+        <label for="listarTodos">Listar todos os veículos </label>
+        <button type="submit" onclick="listarTodos()">Listar</button>
+        <strong id="erroListar" class="alertCpf" style="display: none;" role="alert">Placa não localizada!</strong>
+        <label for="listarUm">Pesquisar por Placa: </label>
+        <input type="text" name="listarUm" id="placaListar" maxlength="11">
+        <button type="submit" onclick="listarUm()">Pesquisar</button> <br><br>
+        <table id="dadosVeiculo">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Tipo de Veículo</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Portas</th>
+                    <th>Lugares</th>
+                    <th>Combustível</th>
+                    <th>Cor</th>
+                    <th>Acessórios</th>
+                </tr>
+            </thead>
+            <tbody id="tabListar">
+            </tbody>
+        </table><br>
+        <button type="reset" onclick="limpaGeral('placaListar','tabListar','erroListar')">Limpar</button>
+    </div>
+    <div class="dados" id="alteraVeiculo">
+        <h3>Alterar Cadastro:</h3>
+        <strong id="erroAlterar" class="alertCpf" style="display: none;" role="alert">Placa não localizada!</strong>
+        <label for="placaAlterar">Informe Placa: </label>
+        <input type="text" name="placaAlterar" id="placaAlterar" maxlength="11">
+        <button type="submit" onclick="alterarPesquisa()">Pesquisar</button>
+        <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Tipo de Veículo</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Portas</th>
+                    <th>Lugares</th>
+                    <th>Combustível</th>
+                    <th>Cor</th>
+                    <th>Acessórios</th>
+                </tr>
+            </thead>
+            <tbody id="alterarDados">
+            </tbody>
+        </table>
+        <br>
+        <div id="formAltera" class="dados" style="display: none;">
+            <form id="altera">
+                <legend>Alterar Informações</legend>
+                <br>
+                <label for="combustivel_veic">Combustivel: </label>
+                <select id="combustivelAtera" name="combustivel_veic" required>
+                    <option value="vazio"> </option>
+                    <option value="alcool">Álcool</option>
+                    <option value="gasolina">Gasolina</option>
+                    <option value="disel">Disel</option>
+                    <option value="flex">Flex</option>
+                </select>
+                <label for="cor_veic">Cor:</label>
+                <input type="text" id="corAltera" name="cor_veic" width="10px">
+                <br><br>
+                <label for="acessorios_veic">Acessórios</label><br>
+                <textarea id="acessoriosAltera" name="acessorios_veic" rows="5" cols="60"></textarea>
+                <br><br>
+
+            </form><br>
+            <button type="submit" onclick="alterarCadastro()">Alterar</button>
+            <button type="reset" onclick="limpaGeral('placaAlterar','alterarDados','formAltera')">Limpar</button>
+
+        </div>
+    </div>
+    <div class="dados" id="excluir_cadastro">
+        <h3>Excuir Cadastro:</h3>
+        <strong id="erroRemover" class="alertCpf" style="display: none;" role="alert">CPF não localizado!</strong>
+        <label for="cpfExcluir">Informe Placa: </label>
+        <input type="text" name="cpfExcluir" id="placaExcluir" maxlength="8">
+        <button type="submit" onclick="pesquisaRemove()">Pesquisar</button>
+        <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Tipo de Veículo</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Portas</th>
+                    <th>Lugares</th>
+                    <th>Combustível</th>
+                    <th>Cor</th>
+                    <th>Acessórios</th>
+                </tr>
+            </thead>
+            <tbody id="excluirDados">
+            </tbody>
+        </table>
+        <br>
+        <div id="confirmaExcluir" style="display: none;">
+            <h4>Deseja excluir?</h4>
+            <button type="reset" onclick="remove()">Sim</button>
+            <button type="reset" onclick="limpaRemove()">Não</button>
+        </div>
+    </div>
+    <script src="./src/script_pg03.js"></script>
+
+</body>
+<footer>
+    <p>By Aline_Vicente © 2021 </p>
+</footer>
+
+</html>

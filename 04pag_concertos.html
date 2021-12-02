@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel=" stylesheet ">
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap " rel=" stylesheet ">
+    <title>Oficina Atitude</title>
+    <link rel="stylesheet" href="style/style_pg04.css">
+    <script src="src/jquery-3.6.0.min.js"></script>
+    <script src="src/script_pg04.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <img src="./img/logo_oficina.gif" alt="Logo Oficina Atyitude">
+        <H1>Atitude Serviços Automotivos</H1>
+        <p>Desde 1990, confiança e qualidade!</p>
+    </div>
+    <div id="nav">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="02pag_mecanicos.html">Mecânicos</a>
+            </li>
+            <li>
+                <a href="03pag_ veiculos.html">Veículos</a>
+            </li>
+            <li>
+                <a style="color: rgb(236, 235, 235);">Consertos</a>
+            </li>
+            <li>
+                <a href="05pag_relatorios.html">Relatórios</a>
+            </li>
+            <li>
+                <a href="06pag_sair.html">Sair</a>
+            </li>
+        </ul>
+    </div>
+    <div class="dados" id="cadastroConsertos">
+        <h2>Cadastro de consertos</h2>
+        <form id="dados_consertos">
+            <legend>Informações do conserto</legend>
+            <div id="error" class="alertRepetido" style="display: none;" role="alert">
+                <br>
+                <strong> NºOS já cadastrado!! Informe novemente.</strong>
+            </div>
+            <label for="num_ordemservico">NºOS:</label>
+            <input class="required" type="text" id="ordemServico" name="num_ordemservico" width="5px"><br><br>
+            <div id="error" class="alertCpf" style="display: none;" role="alert">
+                <br>
+                <strong>CPF não cadastrado!! Verifique registro do mecânico.</strong>
+            </div>
+            <label for="cpf">CPF: </label>
+            <input class="required" type="text" id="cpf" maxlength="11" name="cpf"
+                placeholder="Somente números"><br><br>
+            <div id="error" class="alertPlaca" style="display: none;" role="alert">
+                <br>
+                <strong>Veículo não cadastrado!! Verifique registro do Veículos.</strong>
+            </div>
+            <label for="placa">Paca:</label>
+            <input class="required" type="text" id="placa" name="placa" placeholder="AAAA9999" maxlength="8">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="placa_cidade" name="cidade">
+            <label for="placa_estado">Estado</label>
+            <input type="text" id="placa_estado" name="placa_estado">
+            <br><br>
+            <label for="data_entrada">Data entrada:</label>
+            <input class="required" type="text" id="data_entrada" name="data_entrada" placeholder="99/99/9999">
+            <label for="data_saida">Data saída:</label>
+            <input type="text" id="data_saida" name="data_saida">
+            <br><br>
+            <label for="problema_veic">Problemas com veículo:</label><br>
+            <textarea id="problema_veic" name="problema_veic" rows="5" cols="60"></textarea>
+            <br><br>
+            <label for="valor_conserto">Valor conserto: R$</label>
+            <input type="number" id="valor_conserto" name="valor_conserto">
+            <br><br>
+        </form>
+        <div id="campoObrigatorio" class="alertCpf" style="display: none;" role="alert">
+            <strong>Campos obirgatorio!</strong>
+        </div>
+        <div class="dados" id="exibeCadasto" style="display: none;">
+            <h3>Cadatro realizado!</h3>
+            <table id="dadosConserto">
+                <thead>
+                    <tr>
+                        <th>NºOS</th>
+                        <th>CPF</th>
+                        <th>Placa</th>
+                        <th>Cidade</th>
+                        <th>Estado</th>
+                        <th>Data entrada</th>
+                        <th>Data saída</th>
+                        <th>Problema</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody id="tabdados">
+                </tbody>
+            </table><br>
+            <button type="reset" id="limpCadastro">Limpar</button>
+        </div>
+        <button type="submit" id="btnCadastro">Cadastrar</button>
+    </div>
+    <div class="dados" id="json">
+        <button type="submit" id="btnJson">Mostrar arquivo JSON</button>
+    </div>
+    <div class="dados" id="pesquisaConserto">
+        <h3>Pesquisa de Consertos</h3>
+
+        <label for="listarTodos">Listar todos os consertos </label>
+        <button type="submit" id="listarTodos">Listar</button>
+
+        <strong id="erroListar" class="alertPesquisa" style="display: none;" role="alert">CPF não localizado!</strong>
+        <label for="listarUm">Pesquisar por ordem de serviço - NºOS: </label>
+        <input type="text" name="listarUm" id="listarOs" maxlength="11">
+
+        <button type="submit" id="listarUm">Pesquisar</button> <br><br>
+        <table id="pesquisaConsertos">
+            <thead>
+                <tr>
+                    <th>NºOS</th>
+                    <th>CPF</th>
+                    <th>Placa</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Data entrada</th>
+                    <th>Data saída</th>
+                    <th>Problema</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody id="tabPesquisa">
+            </tbody>
+        </table><br><br>
+        <button type="submit" id="limpaPesquisa">Limpar</button> <br><br>
+    </div>
+    <div class="dados" id="alterarConserto">
+        <h3>Alterar Cadastro:</h3>
+        <strong id="erroAlterar" class="alertCpf" style="display: none;" role="alert">NºOS não localizado!</strong>
+        <label for="consAlterar">Informe a ordem de serviço -NºOS: </label>
+        <input type="text" name="consAlterar" id="ordServAlterar">
+        <button type="submit" id="pesquisaAltera">Pesquisar</button>
+        <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>NºOS</th>
+                    <th>CPF</th>
+                    <th>Placa</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Data entrada</th>
+                    <th>Data saída</th>
+                    <th>Problema</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody id="alteraDados">
+            </tbody>
+        </table>
+        <br>
+        <div id="formAltera" class="dados" style="display: none;">
+            <form id="altera">
+                <legend>Alterar Informações</legend>
+                <br>
+                <label for="data_saida">Data saída:</label>
+                <input type="text" id="novaSaida" name="data_saida">
+                <label for="valor_conserto">Valor conserto: R$</label>
+                <input type="number" id="novoValor" name="valor_conserto"><br><br>
+                <label for="problema_veic">Problemas com veículo:</label><br>
+                <textarea id="novoProblema" name="problema_veic" rows="3" cols="50"></textarea>
+                
+            </form><br>
+            <button type="submit" id="Alterar">Alterar</button>
+            <button type="reset" id="limpAltera">Limpar</button>
+        </div>
+    </div>
+    <div class="dados" id="excluirConserto">
+        <h3>Excluir Cadastro:</h3>
+        <strong id="erroAlterar" class="alertRemover" style="display: none;" role="alert">Ordem de serviço não
+            localizado!</strong>
+        <label for="consAlterar">Informe a ordem de serviço -NºOS: </label>
+        <input type="text" name="consAlterar" id="ordServExcluir">
+        <button type="submit" id="pesquisaExcluir">Pesquisar</button>
+        <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>NºOS</th>
+                    <th>CPF</th>
+                    <th>Placa</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Data entrada</th>
+                    <th>Data saída</th>
+                    <th>Problema</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody id="excluirDados">
+            </tbody>
+        </table>
+        <br>
+        <div id="confirmaExcluir"  style="display: none;">
+            <h4>Deseja excluir?</h4>
+            <button type="submit" id="excluir">Sim</button>
+            <button type="reset" id="limpExcluir">Não</button>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>By Aline_Vicente © 2021 </p>
+</footer>
+
+</html>

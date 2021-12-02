@@ -1,0 +1,37 @@
+body {
+    margin: 0px;
+    background-image: url("logo_oficina.gif") ;
+    background-size: 20%;
+}
+h3{
+    color: black;
+}
+
+legend{
+    color: black;
+    font-size: 20px;
+    text-shadow: rgb(236, 235, 235);
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+#form{
+    background-color:rgb(93, 143, 167);
+    margin: 100px 10px 10px 10px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+fieldset{
+    color: rgb(138, 43, 64);
+    border-color: rgb(138, 43, 64);
+}
+#button {
+    background:  #fff; 
+    border-radius: 6px; 
+    padding: 15px; 
+    cursor: pointer; 
+    color: rgb(138, 43, 64);
+    border: none; 
+    font-size: 16px;  
+} 

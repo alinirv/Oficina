@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href = "https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap"rel =" stylesheet ">
+        <link href = "https://fonts.googleapis.com/css2?family=Vidaloka&display=swap "rel =" stylesheet ">
+        <title>Oficina Atitude</title>
+        <link rel="stylesheet" href="style/style_pg05.css">
+    </head>
+
+    <body>
+        <div id ="header">
+            <img src="logo_oficina.gif" alt="Logo Oficina Atyitude">
+            <H1>Atitude Serviços Automotivos</H1>
+            <p>Desde 1990, confiança e qualidade!</p>
+        </div>
+        <div id ="nav">
+            <ul>
+                <li>
+                    <a href="01pag_principal.html">Home</a>
+                </li>
+                <li>
+                    <a href="02pag_mecanicos.html">Mecânicos</a>
+                </li>
+                <li>
+                    <a href="03pag_ veiculos.html">Veículos</a>
+                </li>
+                <li>
+                    <a href="04pag_concertos.html">Consertos</a>
+                </li>
+                <li>
+                    <a style="color: rgb(236, 235, 235);">Relatórios</a>
+                </li>
+                <li>
+                    <a href="06pag_sair.html" >Sair</a>
+                </li>
+            </ul> 
+        </div>
+        <div class="dados" id="relat_mecanico">
+            <h1>Relatórios</h1>
+            <br>
+            <form>
+                <h3>Relátorios 01: Mecânicos</h3>  
+                <fieldset>
+                     <legend>Dados:</legend>     
+                    <label for="filtro_mecanico">Filtro</label>
+                    <input list="filtro_mecanico" name="filtro_mecanico">
+                        <datalist id="filtro_mecanico">
+                            <option value="Todos">
+                            <option value="Nº Registro"> 
+                            <option value="CPF"> 
+                            <option value="Nome">
+                            <option value="Data nacimento">
+                            <option value="Gênero">
+                            <option value="E-mail principal"> 
+                            <option value="E-mail secundário"> 
+                            <option value="Telefone 1"> 
+                            <option value="Telefone 2"> 
+                            <option value="Telefone 3"> 
+                            <option value="Sálario">           
+                        </datalist>
+                    <input type="search" id="filtro" value="filtrar">
+                    <br>
+                    <label for="busca_celular">Busca por quantidade de celular: </label> &nbsp;     
+                    <label for="qtd_celular">Quantidade celular</label> 
+                    <input type="number" id="qtd_celular">   
+                    <input type="button" id="filtro" value="Buscar">   
+                    <br><br>
+                    <table id="raltorio_mecanicos">
+                        <thead>
+                            <tr>
+                                <th>Nº Registro</th>
+                                <th>CPF</th>
+                                <th>Nome</th>
+                                <th>Data nascimento</th>
+                                <th>Gênero</th>
+                                <th>E-mail principal</th>
+                                <th>E-mail secundário</th>
+                                <th>Telefone 1</th>
+                                <th>Telefone 2</th>
+                                <th>Telefone 3</t>
+                                <th>Salário:</th>                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>919.607.635-63</td>
+                                <td>Diogo Bruno Lima</td>
+                                <td>02/02/1952</td>
+                                <td>Masculino</td>
+                                <td>diogo_lima@gmail.com</td>
+                                <td>dio123lima@gmail.com</td>
+                                <td>(67) 2885-4989</td>
+                                <td>(67) 99693-4384</td>
+                                <td>*******</td>
+                                <td>2.700,00</td>                
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>141.238.896-11</td>
+                                <td>Mário Martin Silveira</td>
+                                <td>05/09/1986</td>
+                                <td>Masculino</td>
+                                <td>mariosilveira@gmail.com.br</td>
+                                <td>*******</td>
+                                <td>(16) 98799-5650</td>
+                                <td>*******</td>
+                                <td>*******</td>
+                                <td>1.800,00</td>                
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>952.568.493-87</td>
+                                <td>Fabiana Louise da Rosa</td>
+                                <td>15/03/1991</td>
+                                <td>Feminino</td>
+                                <td>fabilrosa@hotmail.com.br</td>
+                                <td>*******</td>
+                                <td>(19) 98536-9563</td>
+                                <td>(16) 99725-9874</td>
+                                <td>(16) 99487-5781</td>
+                                <td>2.300,00</td>                
+                            </tr>
+                        </tbody>            
+                    </table>
+                </fieldset>    
+            </form>
+        </div>    
+        <div class="dados" id="relat_veiculos">
+            <h3>Relátorios 02: Veículos</h3>
+            <form> 
+                <fieldset>       
+                    <label for="filtro_veiculo">Filtro</label>
+                    <input list="filtro_veiculo" name="filtro_veiculo">
+                        <datalist id="filtro_veiculo">
+                            <option value="Todos">
+                            <option value="NºOS">    
+                            <option value="Paca:"> 
+                            <option value="Cidade"> 
+                            <option value="Estado">
+                            <option value="Tipo de Veículo">
+                            <option value="Marca">
+                            <option value="Modelo"> 
+                            <option value="Ano"> 
+                            <option value="Portas"> 
+                            <option value="Lugares"> 
+                            <option value="Combustível">
+                            <option value="Cor">     
+                            <option value="Acessórios">           
+                        </datalist>
+                    <input type="search" id="filtro" value="filtrar">
+                    <br>
+                    <label for="busca_acessorios">Burca por tipo de Acessórios:</label> &nbsp;   
+                    <label for="tipo_acessorio1">Tipo Acessórios 1</label> 
+                    <input type="text" id="tipo_acessorio1">
+                    <label for="tipo_acessorio2">Tipo Acessórios 2</label> 
+                    <input type="text" id="tipo_acessorio2">    
+                    <input type="button" id="filtro" value="Buscar">   
+                    <br><br>
+                    <table id="relatorio_veiculo">
+                        <thead>
+                            <tr>
+                                <th>NºOS</th>
+                                <th>placa</th>
+                                <th>Cidade</th>
+                                <th>Estado</th>
+                                <th>Tipo de Veículo</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Ano</th>
+                                <th>Portas</t>
+                                <th>Lugares</th>
+                                <th>Combustível</th>
+                                <th>Cor</th>
+                                <th>Acessórios</th>                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1210</td>
+                                <td>FSO-0473</td>
+                                <td>São Carlos</td>
+                                <td>SP</td>
+                                <td>Carro</td>
+                                <td>Peugeot</td>
+                                <td>306 SR</td>
+                                <td>1997</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>Flex</td>
+                                <td>Amarelo</td>
+                                <td>Trava Elétrica</td>                
+                            </tr>
+                            <tr>
+                                <td>1211</td>
+                                <td>BXJ-6822</td>
+                                <td>São Carlos</td>
+                                <td>SP</td>
+                                <td>SUV</td>
+                                <td>CBT Jipe</td>
+                                <td>Javali 3.0 4x4</td>
+                                <td>1988</td>
+                                <td>3</td>
+                                <td>7</td>
+                                <td>Disel</td>
+                                <td>Verde</td>
+                                <td>Ar condicionado</td> 
+                            </tr>
+                            <tr>
+                                <td>1213</td>
+                                <td>ELS-5370</td>
+                                <td>São Carlos</td>
+                                <td>SP</td>
+                                <td>Carro</td>
+                                <td>VW - VolksWagen</td>
+                                <td>Pointer GLi 2.0</td>
+                                <td>1994</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>Gasolina</td>
+                                <td>Azul</td>
+                                <td>Roda liga-leve</td> 
+                            </tr>                  
+                        </tbody>
+                    </table>
+                </fieldset>
+            </form>    
+        </div>
+        <div class="dados" id="relat_conserto">
+                <h3>Relátorios 03: Consertos</h3>
+                <form> 
+                    <fieldset>       
+                        <label for="filtro_conserto">Filtro</label>
+                        <input list="filtro_conserto" name="filtro_conserto">
+                            <datalist id="filtro_conserto">
+                                <option value="Todos">
+                                <option value="NºOS">
+                                <option value="CPF">
+                                <option value="Nome do Mecânico">          
+                                <option value="Paca:"> 
+                                <option value="Cidade"> 
+                                <option value="Estado">
+                                <option value="Marca">
+                                <option value="Modelo">
+                                <option value="Ano">
+                                <option value="Data de entrada"> 
+                                <option value="Data de saída"> 
+                                <option value="Problema">
+                                <option value="Valor do conserto">                             
+                            </datalist>
+                        <input type="search" id="filtro" value="filtrar">
+                        <br>
+                        <label for="busca_conserto">Burca por data de entrada:</label> &nbsp;            
+                        <label for="busca_entrada1">De:</label> 
+                        <input type="date" id="busca_entrada1">
+                        <label for="busca_entrada2">Até:</label> 
+                        <input type="date" id="busca_entrada2">    
+                        <input type="button" id="filtro" value="Buscar">   
+                        <br><br>
+                        <table id="relatorio_consertos">
+                            <thead>
+                                <tr>
+                                    <th>NºOS</th>
+                                    <th>CPF</th>
+                                    <th>Nome Mecânico</th>
+                                    <th>Placa</th>
+                                    <th>Cidade</th>
+                                    <th>Estado</th>
+                                    <th>Marca</th>
+                                    <th>Modelo</th>
+                                    <th>Ano</th>
+                                    <th>Data entrada</th>
+                                    <th>Data saída</th>
+                                    <th>Problema</th>
+                                    <th>Valor</th>                                       
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1210</td>
+                                    <td>919.607.635-63</td>
+                                    <td>Diogo Bruno Lima</td>
+                                    <td>FSO-0473</td>
+                                    <td>São Carlos</td>
+                                    <td>SP</td>
+                                    <td>Peugeot</td>
+                                    <td>306 SR</td>
+                                    <td>1997</td>
+                                    <td>24/01/2020</td>
+                                    <td>05/02/2020</td>
+                                    <td>Cabeçote desgastado</td>
+                                    <td>800,00</td>                
+                                </tr>
+                                <tr>
+                                    <td>1211</td>
+                                    <td>141.238.896-11</td>
+                                    <td>Mário Martin Silveira</td>
+                                    <td>BXJ-6822</td>
+                                    <td>São Carlos</td>
+                                    <td>SP</td>
+                                    <td>CBT Jipe</td>
+                                    <td>Javali 3.0 4x4</td>
+                                    <td>1988</td>
+                                    <td>10/01/2020</td>
+                                    <td>11/01/2020</td>
+                                    <td>Bicos injetores sujos ou entupidos</td>
+                                    <td>300,00</td> 
+                                </tr>
+                                <tr>
+                                    <td>1213</td>
+                                    <td>952.568.493-87</td>
+                                    <td>Fabiana Louise da Rosa</td>
+                                    <td>ELS-5370</td>
+                                    <td>São Carlos</td>
+                                    <td>SP</td>
+                                    <td>VW - VolksWagen</td>
+                                    <td>Pointer GLi 2.0</td>
+                                    <td>1994</td>
+                                    <td>15/01/2020</td>
+                                    <td>20/01/2020/</td>
+                                    <td>Bomba de combustível ruim</td>
+                                    <td>280,00</td> 
+                                </tr>                  
+                            </tbody>
+                    
+                        </table>
+                    </fieldset>    
+                </form>
+        </div>     
+        <footer>
+            <p>By Aline_Vicente © 2021 </p>
+        </footer> 	
+    </body>
+</html>
